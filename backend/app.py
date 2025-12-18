@@ -346,7 +346,11 @@ def create_app() -> Flask:
         host = parts.hostname or ""
         port = parts.port
         looks_like_pooler = "pooler.supabase.com" in host
-        looks_like_tx_pool = looks_like_pooler and (port == 6543)
+        # Important: our DB URL normalizer may rewrite the hostname to an IPv4
+        # literal to avoid IPv6 egress issues. In that case we can no longer
+        # detect pooler usage via hostname, so key off the transaction pooler
+        # port as well.
+        looks_like_tx_pool = (port == 6543) or (looks_like_pooler and (port == 6543))
 
         if disable_prepared or looks_like_tx_pool:
             engine_options = {
@@ -357,7 +361,7 @@ def create_app() -> Flask:
             }
             app.logger.warning(
                 "Disabling psycopg prepared statements (%s)",
-                "env override" if disable_prepared else "Supabase transaction pooler",
+                "env override" if disable_prepared else f"transaction pooler port {port}",
             )
     except Exception:
         engine_options = {}
