@@ -334,6 +334,34 @@ def create_app() -> Flask:
 
     db_uri = _normalize_database_url(os.environ.get("DATABASE_URL", ""))
 
+    # Supabase's transaction pooler (PgBouncer) can break server-side prepared
+    # statements. psycopg3 uses prepared statements by default, which can
+    # trigger DuplicatePreparedStatement errors when connections are pooled.
+    # Disable them automatically for pooler hosts/ports, with an env override.
+    engine_options: dict = {}
+    try:
+        parts = urlsplit(db_uri)
+        disable_prepared_raw = os.environ.get("DISABLE_PG_PREPARED_STATEMENTS", "").strip().lower()
+        disable_prepared = disable_prepared_raw in ("1", "true", "yes", "on")
+        host = parts.hostname or ""
+        port = parts.port
+        looks_like_pooler = "pooler.supabase.com" in host
+        looks_like_tx_pool = looks_like_pooler and (port == 6543)
+
+        if disable_prepared or looks_like_tx_pool:
+            engine_options = {
+                "connect_args": {
+                    # psycopg3: set to 0/None to disable server-side prepared statements
+                    "prepare_threshold": 0,
+                }
+            }
+            app.logger.warning(
+                "Disabling psycopg prepared statements (%s)",
+                "env override" if disable_prepared else "Supabase transaction pooler",
+            )
+    except Exception:
+        engine_options = {}
+
     # If we couldn't force IPv4, make that explicit in logs to avoid guessing.
     try:
         parts = urlsplit(db_uri)
@@ -375,6 +403,7 @@ def create_app() -> Flask:
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
         SESSION_COOKIE_SAMESITE=cookie_samesite,
         SESSION_COOKIE_SECURE=cookie_secure,
+        SQLALCHEMY_ENGINE_OPTIONS=engine_options,
     )
 
     CORS(app, supports_credentials=True, origins=[frontend_origin])
