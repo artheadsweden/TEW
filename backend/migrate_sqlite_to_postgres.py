@@ -55,13 +55,17 @@ def model_rows_to_dicts(rows: list[Any]) -> list[dict[str, Any]]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--sqlite-path", default="web/backend/instance/app.db")
+    parser.add_argument("--sqlite-path", default="backend/instance/app.db")
     parser.add_argument("--force", action="store_true", help="Delete existing Postgres rows before insert")
     parser.add_argument("--dry-run", action="store_true", help="Read SQLite and print counts only")
     parser.add_argument("--batch-size", type=int, default=500)
     args = parser.parse_args()
 
     sqlite_path = args.sqlite_path
+
+    sqlite_db_path = Path(sqlite_path).expanduser().resolve()
+    # SQLAlchemy needs 4 slashes for absolute paths on POSIX.
+    sqlite_db_url = f"sqlite:////{sqlite_db_path.as_posix().lstrip('/')}"
 
     # Allow running from repo root: make sure web/backend is importable.
     backend_dir = Path(__file__).resolve().parent
@@ -95,12 +99,16 @@ def main() -> int:
         Feedback,
     ]
 
-    # Build a SQLite app context by ensuring DATABASE_URL is not set.
-    prev_db_url = os.environ.pop("DATABASE_URL", None)
+    # Build a SQLite app context explicitly.
+    # (backend/app.py requires DATABASE_URL; there's no implicit SQLite fallback.)
+    prev_db_url = os.environ.get("DATABASE_URL")
+    os.environ["DATABASE_URL"] = sqlite_db_url
     try:
         sqlite_app = create_app()
     finally:
-        if prev_db_url is not None:
+        if prev_db_url is None:
+            os.environ.pop("DATABASE_URL", None)
+        else:
             os.environ["DATABASE_URL"] = prev_db_url
 
     # Read from SQLite
@@ -108,8 +116,8 @@ def main() -> int:
     sqlite_data: dict[str, list[dict[str, Any]]] = {}
     with sqlite_app.app_context():
         # If the SQLite path is missing, fail early with a clear message.
-        if not os.path.exists(sqlite_path):
-            raise SystemExit(f"SQLite DB not found at: {sqlite_path}")
+        if not sqlite_db_path.exists():
+            raise SystemExit(f"SQLite DB not found at: {sqlite_db_path}")
 
         # Force SQLite usage for this app.
         if db.engine.url.get_backend_name() != "sqlite":
@@ -129,8 +137,15 @@ def main() -> int:
         return 0
 
     # Target Postgres uses DATABASE_URL.
-    if not os.environ.get("DATABASE_URL"):
+    pg_db_url = os.environ.get("DATABASE_URL")
+    if not pg_db_url:
         raise SystemExit("DATABASE_URL is not set. Export it first, then rerun this script.")
+
+    # Ensure we are pointing at Postgres for the target.
+    if pg_db_url.startswith("sqlite:"):
+        raise SystemExit(
+            "DATABASE_URL points to SQLite. For the import step, export your Postgres/Supabase DATABASE_URL and rerun."
+        )
 
     pg_app = create_app()
     with pg_app.app_context():
