@@ -359,8 +359,6 @@ def create_app() -> Flask:
                     # prepared statements do not mix. In psycopg3, a threshold of
                     # 0 means "prepare immediately"; use None to disable.
                     "prepare_threshold": None,
-                    # Also disable the client-side prepared statement cache.
-                    "prepared_statement_cache_size": 0,
                 }
             }
             app.logger.warning(
