@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import urllib.request
+import urllib.parse
 import socket
 from typing import Iterable
 from datetime import datetime
@@ -74,6 +75,74 @@ def _replace_url_host_preserving_userinfo(netloc: str, new_host: str) -> str:
     return f"{userinfo + '@' if userinfo else ''}{new_hostport}"
 
 
+def _resolve_ipv4_best_effort(hostname: str, port: int) -> str | None:
+    """Return an IPv4 address (A record) for hostname, if possible.
+
+    This is best-effort: it tries system resolution first, then falls back to
+    DNS-over-HTTPS. Some environments resolve IPv6 but not IPv4, and some DoH
+    providers may return CNAME chains that require following.
+    """
+
+    # 1) Fast path: gethostbyname (A records only).
+    try:
+        ipv4 = socket.gethostbyname(hostname)
+        if ipv4:
+            return ipv4
+    except Exception:
+        pass
+
+    # 2) System resolver (explicit AF_INET).
+    try:
+        infos = socket.getaddrinfo(
+            hostname,
+            port,
+            family=socket.AF_INET,
+            type=socket.SOCK_STREAM,
+        )
+        if infos:
+            return infos[0][4][0]
+    except Exception:
+        pass
+
+    def _doh_lookup_a(initial_name: str) -> str | None:
+        # Try both Cloudflare + Google. Follow up to 3 CNAME hops.
+        providers = (
+            ("https://cloudflare-dns.com/dns-query", "application/dns-json"),
+            ("https://dns.google/resolve", "application/json"),
+        )
+
+        name = initial_name
+        for _ in range(3):
+            cname: str | None = None
+            for base_url, accept in providers:
+                try:
+                    url = base_url + "?" + urllib.parse.urlencode({"name": name, "type": "A"})
+                    req = urllib.request.Request(url, headers={"Accept": accept}, method="GET")
+                    with urllib.request.urlopen(req, timeout=5) as resp:
+                        data = json.loads(resp.read().decode("utf-8"))
+
+                    for ans in (data.get("Answer") or []):
+                        ans_type = ans.get("type")
+                        ans_data = ans.get("data")
+                        if ans_type == 1 and isinstance(ans_data, str):
+                            ip = ans_data.strip()
+                            if ip:
+                                return ip
+                        if ans_type == 5 and isinstance(ans_data, str) and not cname:
+                            cname = ans_data.strip().rstrip(".")
+                except Exception:
+                    continue
+
+            if cname and cname != name:
+                name = cname
+                continue
+            break
+
+        return None
+
+    return _doh_lookup_a(hostname)
+
+
 def _normalize_database_url(raw: str) -> str:
     db_uri = (raw or "").strip()
     if not db_uri:
@@ -113,44 +182,8 @@ def _normalize_database_url(raw: str) -> str:
         if parts.scheme.startswith("postgresql"):
             qs = dict(parse_qsl(parts.query, keep_blank_values=True))
             if "hostaddr" not in qs and parts.hostname:
-                # Resolve an IPv4 address for the hostname.
                 port = parts.port or 5432
-                ipv4: str | None = None
-                try:
-                    infos = socket.getaddrinfo(
-                        parts.hostname,
-                        port,
-                        family=socket.AF_INET,
-                        type=socket.SOCK_STREAM,
-                    )
-                    if infos:
-                        ipv4 = infos[0][4][0]
-                except Exception:
-                    ipv4 = None
-
-                # If system DNS only returns IPv6 (or is otherwise broken), try
-                # a best-effort DNS-over-HTTPS lookup for an A record.
-                if not ipv4:
-                    try:
-                        import urllib.parse
-
-                        doh_url = (
-                            "https://cloudflare-dns.com/dns-query?"
-                            + urllib.parse.urlencode({"name": parts.hostname, "type": "A"})
-                        )
-                        req = urllib.request.Request(
-                            doh_url,
-                            headers={"Accept": "application/dns-json"},
-                            method="GET",
-                        )
-                        with urllib.request.urlopen(req, timeout=5) as resp:
-                            data = json.loads(resp.read().decode("utf-8"))
-                        for ans in data.get("Answer") or []:
-                            if ans.get("type") == 1 and isinstance(ans.get("data"), str):
-                                ipv4 = ans["data"].strip()
-                                break
-                    except Exception:
-                        ipv4 = None
+                ipv4 = _resolve_ipv4_best_effort(parts.hostname, port)
 
                 if ipv4:
                     qs["hostaddr"] = ipv4
@@ -300,6 +333,19 @@ def create_app() -> Flask:
     frontend_origin = os.environ.get("FRONTEND_ORIGIN", "http://localhost:5173")
 
     db_uri = _normalize_database_url(os.environ.get("DATABASE_URL", ""))
+
+    # If we couldn't force IPv4, make that explicit in logs to avoid guessing.
+    try:
+        parts = urlsplit(db_uri)
+        if parts.scheme.startswith("postgresql"):
+            qs = dict(parse_qsl(parts.query, keep_blank_values=True))
+            hostaddr = qs.get("hostaddr")
+            if hostaddr:
+                app.logger.warning("DB hostaddr forced to %s", hostaddr)
+            else:
+                app.logger.warning("DB hostaddr not set (IPv6 may be used if preferred by DNS)")
+    except Exception:
+        pass
 
     # Helpful for Render debugging; does not leak the password.
     try:
