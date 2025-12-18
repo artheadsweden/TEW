@@ -307,6 +307,11 @@ def create_app() -> Flask:
         app.logger.warning("Using DATABASE_URL=%s", _redact_database_url(db_uri))
     except Exception:
         pass
+    try:
+        # Also print to stdout because Gunicorn logging can bypass Flask handlers.
+        print(f"Using DATABASE_URL={_redact_database_url(db_uri)}", flush=True)
+    except Exception:
+        pass
 
     app.config.update(
         SECRET_KEY=os.environ.get("FLASK_SECRET_KEY", "dev-secret-change-me"),
