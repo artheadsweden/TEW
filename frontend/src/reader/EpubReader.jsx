@@ -11,6 +11,7 @@ export default function EpubReader() {
   const readerSettingsTimerRef = useRef(null)
   const readerSettingsRef = useRef({ theme: 'paper', fontScale: 1.0, lineHeight: 1.65 })
   const tocByNormHrefRef = useRef(new Map())
+  const boundHotkeyTargetsRef = useRef(new Set())
 
   const [ready, setReady] = useState(false)
   const [error, setError] = useState(null)
@@ -400,6 +401,89 @@ export default function EpubReader() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [readerTheme, readerFontScale, readerLineHeight])
 
+  useEffect(() => {
+    if (!ready) return
+
+    function isEditableTarget(target) {
+      const el = target
+      if (!el || typeof el !== 'object') return false
+      const tag = String(el.tagName || '').toLowerCase()
+      if (tag === 'input' || tag === 'textarea' || tag === 'select') return true
+      return Boolean(el.isContentEditable)
+    }
+
+    function onKeyDown(e) {
+      if (!e) return
+      if (e.defaultPrevented) return
+      if (e.metaKey || e.ctrlKey || e.altKey) return
+      if (isEditableTarget(e.target)) return
+
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        goPrev()
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        goNext()
+      }
+    }
+
+    function bindTarget(win) {
+      if (!win || typeof win.addEventListener !== 'function') return
+      const set = boundHotkeyTargetsRef.current
+      if (set.has(win)) return
+      win.addEventListener('keydown', onKeyDown)
+      set.add(win)
+    }
+
+    function unbindAll() {
+      const set = boundHotkeyTargetsRef.current
+      for (const win of set) {
+        try {
+          win.removeEventListener('keydown', onKeyDown)
+        } catch {
+          // ignore
+        }
+      }
+      set.clear()
+    }
+
+    // Bind to the top-level window.
+    bindTarget(window)
+
+    // Bind to any currently rendered EPUB iframe windows.
+    try {
+      const rendition = renditionRef.current
+      const contentsList = rendition?.getContents?.() || []
+      for (const c of contentsList) bindTarget(c?.window)
+    } catch {
+      // ignore
+    }
+
+    // And bind to new iframe windows as they render.
+    const rendition = renditionRef.current
+    const onRendered = (_section, contents) => {
+      try {
+        bindTarget(contents?.window)
+      } catch {
+        // ignore
+      }
+    }
+    try {
+      rendition?.on?.('rendered', onRendered)
+    } catch {
+      // ignore
+    }
+
+    return () => {
+      try {
+        rendition?.off?.('rendered', onRendered)
+      } catch {
+        // ignore
+      }
+      unbindAll()
+    }
+  }, [ready, goPrev, goNext])
+
   async function goPrev() {
     const rendition = renditionRef.current
     if (!rendition) return
@@ -519,8 +603,8 @@ export default function EpubReader() {
             <span className="chip">Notes</span>
           </div>
 
-          <div className="row" style={{ alignItems: 'end', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap', marginTop: 12 }}>
-            <div className="field" style={{ minWidth: 320, flex: '1 1 320px', marginBottom: 0 }}>
+          <div className="row" style={{ alignItems: 'end', gap: 16, flexWrap: 'wrap', marginTop: 12 }}>
+            <div className="field" style={{ minWidth: 0, flex: '1 1 360px', marginBottom: 0, maxWidth: '100%' }}>
               <label>Chapter</label>
               <select
                 value={selectedTocHref}
@@ -531,16 +615,12 @@ export default function EpubReader() {
                   jumpToHref(next)
                 }}
                 disabled={!ready}
+                style={{ width: '100%', maxWidth: '100%' }}
               >
                 {tocOptions.map((t) => (
                   <option key={t.href} value={t.href}>{t.label}</option>
                 ))}
               </select>
-            </div>
-
-            <div className="row" style={{ alignItems: 'center' }}>
-              <button onClick={goPrev} disabled={!ready}>Prev</button>
-              <button onClick={goNext} disabled={!ready}>Next</button>
             </div>
           </div>
 
@@ -607,6 +687,11 @@ export default function EpubReader() {
               borderRadius: 12,
             }}
           />
+
+          <div className="row" style={{ justifyContent: 'space-between', gap: 12, marginTop: 12, flexWrap: 'wrap' }}>
+            <button onClick={goPrev} disabled={!ready}>Prev</button>
+            <button onClick={goNext} disabled={!ready}>Next</button>
+          </div>
         </div>
       </div>
 
