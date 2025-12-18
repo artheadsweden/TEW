@@ -27,6 +27,53 @@ db = SQLAlchemy()
 login_manager = LoginManager()
 
 
+def _redact_database_url(db_uri: str) -> str:
+    try:
+        parts = urlsplit(db_uri)
+        if not parts.scheme.startswith("postgresql"):
+            return db_uri
+
+        netloc = parts.netloc
+        if "@" not in netloc:
+            return db_uri
+
+        userinfo, hostport = netloc.rsplit("@", 1)
+        if ":" not in userinfo:
+            return db_uri
+
+        user, _pw = userinfo.split(":", 1)
+        safe_netloc = f"{user}:***@{hostport}"
+        return urlunsplit(parts._replace(netloc=safe_netloc))
+    except Exception:
+        return "<redacted>"
+
+
+def _replace_url_host_preserving_userinfo(netloc: str, new_host: str) -> str:
+    """Replace host in a URL netloc while preserving any percent-encoded userinfo."""
+    userinfo = ""
+    hostport = netloc
+    if "@" in netloc:
+        userinfo, hostport = netloc.rsplit("@", 1)
+
+    # Parse optional port.
+    port = ""
+    hp = hostport
+    if hp.startswith("["):
+        # IPv6 literal like [::1]:5432
+        end = hp.find("]")
+        if end != -1:
+            rest = hp[end + 1 :]
+            if rest.startswith(":"):
+                port = rest[1:]
+    else:
+        if ":" in hp:
+            host_only, port = hp.rsplit(":", 1)
+            hp = host_only
+
+    new_hostport = f"{new_host}{(':' + port) if port else ''}"
+    return f"{userinfo + '@' if userinfo else ''}{new_hostport}"
+
+
 def _normalize_database_url(raw: str) -> str:
     db_uri = (raw or "").strip()
     if not db_uri:
@@ -107,8 +154,13 @@ def _normalize_database_url(raw: str) -> str:
 
                 if ipv4:
                     qs["hostaddr"] = ipv4
+                    # Be maximally compatible: set hostaddr AND also rewrite the
+                    # hostname to the IPv4 literal. Some stacks/drivers ignore
+                    # hostaddr from URI query params, but they will always honor
+                    # a literal IPv4 host.
                     new_query = urlencode(qs)
-                    parts = parts._replace(query=new_query)
+                    new_netloc = _replace_url_host_preserving_userinfo(parts.netloc, ipv4)
+                    parts = parts._replace(query=new_query, netloc=new_netloc)
                     db_uri = urlunsplit(parts)
     except Exception:
         # Best-effort only; fall back to the original URL.
@@ -248,6 +300,12 @@ def create_app() -> Flask:
     frontend_origin = os.environ.get("FRONTEND_ORIGIN", "http://localhost:5173")
 
     db_uri = _normalize_database_url(os.environ.get("DATABASE_URL", ""))
+
+    # Helpful for Render debugging; does not leak the password.
+    try:
+        app.logger.info("Using DATABASE_URL=%s", _redact_database_url(db_uri))
+    except Exception:
+        pass
 
     app.config.update(
         SECRET_KEY=os.environ.get("FLASK_SECRET_KEY", "dev-secret-change-me"),
