@@ -359,11 +359,22 @@ def create_app() -> Flask:
     except Exception:
         pass
 
+    cookie_samesite = os.environ.get("SESSION_COOKIE_SAMESITE", "Lax")
+    cookie_secure_raw = os.environ.get("SESSION_COOKIE_SECURE", "").strip().lower()
+    if cookie_secure_raw in ("1", "true", "yes", "on"):
+        cookie_secure = True
+    elif cookie_secure_raw in ("0", "false", "no", "off"):
+        cookie_secure = False
+    else:
+        # If you set SameSite=None, modern browsers require Secure.
+        cookie_secure = (cookie_samesite or "").strip().lower() == "none"
+
     app.config.update(
         SECRET_KEY=os.environ.get("FLASK_SECRET_KEY", "dev-secret-change-me"),
         SQLALCHEMY_DATABASE_URI=db_uri,
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
-        SESSION_COOKIE_SAMESITE="Lax",
+        SESSION_COOKIE_SAMESITE=cookie_samesite,
+        SESSION_COOKIE_SECURE=cookie_secure,
     )
 
     CORS(app, supports_credentials=True, origins=[frontend_origin])
