@@ -68,9 +68,44 @@ def _normalize_database_url(raw: str) -> str:
             if "hostaddr" not in qs and parts.hostname:
                 # Resolve an IPv4 address for the hostname.
                 port = parts.port or 5432
-                infos = socket.getaddrinfo(parts.hostname, port, family=socket.AF_INET, type=socket.SOCK_STREAM)
-                if infos:
-                    ipv4 = infos[0][4][0]
+                ipv4: str | None = None
+                try:
+                    infos = socket.getaddrinfo(
+                        parts.hostname,
+                        port,
+                        family=socket.AF_INET,
+                        type=socket.SOCK_STREAM,
+                    )
+                    if infos:
+                        ipv4 = infos[0][4][0]
+                except Exception:
+                    ipv4 = None
+
+                # If system DNS only returns IPv6 (or is otherwise broken), try
+                # a best-effort DNS-over-HTTPS lookup for an A record.
+                if not ipv4:
+                    try:
+                        import urllib.parse
+
+                        doh_url = (
+                            "https://cloudflare-dns.com/dns-query?"
+                            + urllib.parse.urlencode({"name": parts.hostname, "type": "A"})
+                        )
+                        req = urllib.request.Request(
+                            doh_url,
+                            headers={"Accept": "application/dns-json"},
+                            method="GET",
+                        )
+                        with urllib.request.urlopen(req, timeout=5) as resp:
+                            data = json.loads(resp.read().decode("utf-8"))
+                        for ans in data.get("Answer") or []:
+                            if ans.get("type") == 1 and isinstance(ans.get("data"), str):
+                                ipv4 = ans["data"].strip()
+                                break
+                    except Exception:
+                        ipv4 = None
+
+                if ipv4:
                     qs["hostaddr"] = ipv4
                     new_query = urlencode(qs)
                     parts = parts._replace(query=new_query)
