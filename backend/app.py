@@ -412,7 +412,19 @@ def create_app() -> Flask:
         SQLALCHEMY_ENGINE_OPTIONS=engine_options,
     )
 
-    CORS(app, supports_credentials=True, origins=[frontend_origin])
+    CORS(
+        app,
+        supports_credentials=True,
+        origins=[frontend_origin],
+        allow_headers=["Content-Type", "Range"],
+        expose_headers=[
+            "Accept-Ranges",
+            "Content-Range",
+            "Content-Length",
+            "Content-Type",
+            "Content-Disposition",
+        ],
+    )
 
     db.init_app(app)
     login_manager.init_app(app)

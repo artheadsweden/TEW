@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { apiFetch } from '../api.js'
+import { apiFetch, apiUrl } from '../api.js'
 import HelpTip from '../components/HelpTip.jsx'
 
 function formatTime(seconds) {
@@ -129,8 +129,7 @@ export default function AudioPlayer() {
 
   const chapterStreamUrl = useCallback((id) => {
     if (!id) return ''
-    // Always use same-origin streaming to avoid WebAudio CORS restrictions.
-    return `/api/audio/stream/${encodeURIComponent(id)}`
+    return apiUrl(`/api/audio/stream/${encodeURIComponent(id)}`)
   }, [])
 
   const syncedLines = useMemo(() => {
@@ -726,6 +725,42 @@ export default function AudioPlayer() {
     if (Number.isFinite(el.currentTime)) setCurrentTime(el.currentTime)
   }
 
+  async function diagnoseAudioSrc(src) {
+    const url = String(src || '').trim()
+    if (!url) return null
+
+    const controller = new AbortController()
+    const t = setTimeout(() => controller.abort(), 9000)
+    try {
+      const resp = await fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+        headers: { Range: 'bytes=0-0' },
+        signal: controller.signal,
+      })
+      const ct = resp.headers.get('content-type') || ''
+      let snippet = ''
+      try {
+        if (ct.toLowerCase().includes('application/json')) {
+          const j = await resp.json()
+          snippet = j?.error ? String(j.error) : JSON.stringify(j)
+        } else {
+          snippet = (await resp.text()).trim().slice(0, 140)
+        }
+      } catch {
+        snippet = ''
+      }
+      return {
+        status: resp.status,
+        ok: resp.ok,
+        contentType: ct,
+        snippet,
+      }
+    } finally {
+      clearTimeout(t)
+    }
+  }
+
 
   function onAudioError() {
     const el = audioRef.current
@@ -739,7 +774,19 @@ export default function AudioPlayer() {
     }
     const label = code ? (map[code] || `MEDIA_ERR_${code}`) : 'Unknown media error'
     console.error('Audio element error:', { label, mediaError, src: el?.src })
-    setError(`Audio error: ${label}`)
+
+    // Try to surface the underlying HTTP response (401/404/HTML/etc).
+    const src = el?.currentSrc || el?.src || ''
+    diagnoseAudioSrc(src)
+      .then((d) => {
+        if (!d) {
+          setError(`Audio error: ${label}`)
+          return
+        }
+        const extra = d.snippet ? ` — ${d.snippet}` : ''
+        setError(`Audio error: ${label} (HTTP ${d.status}, ${d.contentType || 'unknown type'})${extra}`)
+      })
+      .catch(() => setError(`Audio error: ${label}`))
   }
 
   async function addBookmark() {
@@ -1030,7 +1077,7 @@ export default function AudioPlayer() {
 
           <audio
             ref={audioRef}
-            crossOrigin="anonymous"
+            crossOrigin="use-credentials"
             src={audioUrl}
             onTimeUpdate={onTimeUpdate}
             onLoadedMetadata={onLoadedMetadata}

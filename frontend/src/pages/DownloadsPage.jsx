@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react'
 import TopNav from '../components/TopNav.jsx'
-import { apiFetch } from '../api.js'
+import { apiFetch, apiUrl } from '../api.js'
 
 export default function DownloadsPage() {
   const [links, setLinks] = useState({ epub: null, pdf: null })
   const [buildInfo, setBuildInfo] = useState({ draftVersion: 'v0', updatedAt: null, whatChanged: [] })
   const [error, setError] = useState(null)
+
+  const epubHref = links.epub ? apiUrl(links.epub) : null
+  const pdfHref = links.pdf ? apiUrl(links.pdf) : null
 
   useEffect(() => {
     Promise.all([
@@ -54,10 +57,10 @@ export default function DownloadsPage() {
             <div className="row">
               <a
                 className={`btn ${links.epub ? 'btnPrimary' : 'btnSecondary'}`}
-                href={links.epub || '#'}
-                aria-disabled={links.epub ? 'false' : 'true'}
+                href={epubHref || '#'}
+                aria-disabled={epubHref ? 'false' : 'true'}
                 onClick={(e) => {
-                  if (!links.epub) e.preventDefault()
+                  if (!epubHref) e.preventDefault()
                 }}
               >
                 Download EPUB
@@ -80,10 +83,10 @@ export default function DownloadsPage() {
             <div className="row">
               <a
                 className={`btn ${links.pdf ? 'btnPrimary' : 'btnSecondary'}`}
-                href={links.pdf || '#'}
-                aria-disabled={links.pdf ? 'false' : 'true'}
+                href={pdfHref || '#'}
+                aria-disabled={pdfHref ? 'false' : 'true'}
                 onClick={(e) => {
-                  if (!links.pdf) e.preventDefault()
+                  if (!pdfHref) e.preventDefault()
                 }}
               >
                 Download PDF

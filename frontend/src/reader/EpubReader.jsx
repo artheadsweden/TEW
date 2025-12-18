@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import ePub from 'epubjs'
-import { apiFetch } from '../api.js'
+import { apiFetch, apiUrl } from '../api.js'
 import HelpTip from '../components/HelpTip.jsx'
 
 export default function EpubReader() {
@@ -242,8 +242,27 @@ export default function EpubReader() {
         }
 
         // Load EPUB behind auth.
-        const resp = await fetch('/api/book/epub', { credentials: 'include' })
-        if (!resp.ok) throw new Error('EPUB not available')
+        const epubUrl = apiUrl('/api/book/epub')
+        const resp = await fetch(epubUrl, { credentials: 'include' })
+        if (!resp.ok) {
+          let detail = ''
+          const ct = (resp.headers.get('content-type') || '').toLowerCase()
+          try {
+            if (ct.includes('application/json')) {
+              const j = await resp.json()
+              detail = j?.error ? String(j.error) : JSON.stringify(j)
+            } else {
+              const t = await resp.text()
+              detail = t ? String(t).trim().slice(0, 180) : ''
+            }
+          } catch {
+            detail = ''
+          }
+
+          const redirected = resp.redirected ? ` redirected-to=${resp.url}` : ''
+          const extra = detail ? ` — ${detail}` : ''
+          throw new Error(`EPUB fetch failed (${resp.status})${redirected}${extra}`)
+        }
         const blob = await resp.blob()
         const arrayBuffer = await blob.arrayBuffer()
 
