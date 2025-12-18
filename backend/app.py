@@ -3,9 +3,11 @@ from __future__ import annotations
 import json
 import os
 import urllib.request
+import socket
 from typing import Iterable
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from flask import Flask, Response, jsonify, request, send_from_directory, stream_with_context
 from flask_cors import CORS
@@ -54,6 +56,28 @@ def _normalize_database_url(raw: str) -> str:
     # Supabase Postgres typically requires SSL.
     if db_uri.startswith("postgresql") and "sslmode=" not in db_uri:
         db_uri += ("&" if "?" in db_uri else "?") + "sslmode=require"
+
+    # Some hosting environments (including Render in some regions) may not have
+    # outbound IPv6. If DNS returns an IPv6 address first, libpq/psycopg can fail
+    # with "Network is unreachable". When possible, add `hostaddr=<ipv4>` while
+    # keeping the hostname for TLS/SNI.
+    try:
+        parts = urlsplit(db_uri)
+        if parts.scheme.startswith("postgresql"):
+            qs = dict(parse_qsl(parts.query, keep_blank_values=True))
+            if "hostaddr" not in qs and parts.hostname:
+                # Resolve an IPv4 address for the hostname.
+                port = parts.port or 5432
+                infos = socket.getaddrinfo(parts.hostname, port, family=socket.AF_INET, type=socket.SOCK_STREAM)
+                if infos:
+                    ipv4 = infos[0][4][0]
+                    qs["hostaddr"] = ipv4
+                    new_query = urlencode(qs)
+                    parts = parts._replace(query=new_query)
+                    db_uri = urlunsplit(parts)
+    except Exception:
+        # Best-effort only; fall back to the original URL.
+        pass
 
     return db_uri
 

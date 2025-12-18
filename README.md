@@ -162,6 +162,7 @@ python -c "import urllib.parse; print(urllib.parse.quote(input('Password: '), sa
 Notes:
 
 - This backend will append `sslmode=require` automatically for Postgres URLs if it’s missing.
+- If your Render deploy errors with an IPv6 `Network is unreachable` message when connecting to Supabase, the backend now attempts to resolve an IPv4 address and add `hostaddr=<ipv4>` automatically (libpq feature) while keeping the hostname.
 - If you ever accidentally paste secrets into git history, rotate the Supabase DB password.
 
 ### Migrating from local SQLite → Postgres
