@@ -355,8 +355,12 @@ def create_app() -> Flask:
         if disable_prepared or looks_like_tx_pool:
             engine_options = {
                 "connect_args": {
-                    # psycopg3: set to 0/None to disable server-side prepared statements
-                    "prepare_threshold": 0,
+                    # psycopg3: transaction pooling (PgBouncer) and server-side
+                    # prepared statements do not mix. In psycopg3, a threshold of
+                    # 0 means "prepare immediately"; use None to disable.
+                    "prepare_threshold": None,
+                    # Also disable the client-side prepared statement cache.
+                    "prepared_statement_cache_size": 0,
                 }
             }
             app.logger.warning(
