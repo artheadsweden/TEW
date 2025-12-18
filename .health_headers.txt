@@ -1,0 +1,13 @@
+HTTP/2 200 
+date: Thu, 18 Dec 2025 15:13:30 GMT
+content-type: application/json
+cf-ray: 9aff9ac81852ac16-GOT
+access-control-allow-credentials: true
+access-control-allow-origin: https://tew-frontend.onrender.com
+rndr-id: be97f2e3-b29e-48c8
+vary: Accept-Encoding
+x-render-origin-server: gunicorn
+cf-cache-status: DYNAMIC
+server: cloudflare
+alt-svc: h3=":443"; ma=86400
+

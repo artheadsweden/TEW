@@ -1,0 +1,9 @@
+PWD:/Users/javv/code/book_site/web
+## main...origin/main
+ M frontend/src/api.js
+?? .gitinfo.txt
+?? backend/export_sqlite_to_supabase_sql.py
+?? backend/supabase_seed.sql
+HEAD:eb369da4bae209ce1f9ba54acc260d6b5876e06e
+ORIGIN_MAIN:eb369da4bae209ce1f9ba54acc260d6b5876e06e
+eb369da Fix psycopg connect args for pooler

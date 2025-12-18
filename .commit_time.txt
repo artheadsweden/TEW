@@ -1,0 +1,1 @@
+eb369da4bae209ce1f9ba54acc260d6b5876e06e 2025-12-18 16:07:11 +0100 Fix psycopg connect args for pooler
