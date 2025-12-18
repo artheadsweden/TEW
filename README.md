@@ -42,7 +42,7 @@ Useful env vars:
 
 - `DATABASE_URL` (required)
   - Local SQLite example: `sqlite:////absolute/path/to/backend/instance/app.db`
-  - Postgres example: `postgresql://user:pass@host:5432/dbname` (the app will append `sslmode=require` if missing)
+  - Postgres example: `postgresql://user:pass@host:5432/dbname` (the app will append `sslmode=require` if missing; it uses the psycopg3 driver on deploy)
 - `FRONTEND_ORIGIN` (default `http://localhost:5173`) — allowed CORS origin (cookies enabled)
 - `FLASK_SECRET_KEY` (default `dev-secret-change-me`) — session signing key
 - `HOST` (default `127.0.0.1`), `PORT` (default `5000`), `FLASK_DEBUG` (default `1`)

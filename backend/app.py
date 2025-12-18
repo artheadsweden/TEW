@@ -34,12 +34,17 @@ def _normalize_database_url(raw: str) -> str:
     if db_uri.startswith("postgres://"):
         db_uri = "postgresql://" + db_uri[len("postgres://") :]
 
+    # Prefer psycopg3 (psycopg) over psycopg2 for better compatibility on newer
+    # Python runtimes (e.g. Render currently defaults to Python 3.13).
+    if db_uri.startswith("postgresql://"):
+        db_uri = "postgresql+psycopg://" + db_uri[len("postgresql://") :]
+
     # Guard against common URL-encoding pitfalls in passwords.
     # If your password contains reserved characters (e.g. '(' or ')'), the URL must
     # percent-encode them, otherwise SQLAlchemy's URL parser may reject it.
-    if db_uri.startswith("postgresql://") and "@" in db_uri:
+    if db_uri.startswith("postgresql") and "@" in db_uri:
         # Extract userinfo (user:pass) between scheme and '@'
-        userinfo = db_uri[len("postgresql://") :].split("@", 1)[0]
+        userinfo = db_uri.split("://", 1)[1].split("@", 1)[0]
         if any(ch in userinfo for ch in ("(", ")", " ")):
             raise SystemExit(
                 "DATABASE_URL appears to contain unencoded special characters in the password. "
@@ -47,7 +52,7 @@ def _normalize_database_url(raw: str) -> str:
             )
 
     # Supabase Postgres typically requires SSL.
-    if db_uri.startswith("postgresql://") and "sslmode=" not in db_uri:
+    if db_uri.startswith("postgresql") and "sslmode=" not in db_uri:
         db_uri += ("&" if "?" in db_uri else "?") + "sslmode=require"
 
     return db_uri
