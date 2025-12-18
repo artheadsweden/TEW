@@ -49,3 +49,14 @@ frontend/dist/
 
 # Optional: local-only files
 backend/static/downloads/*.pdf
+
+# Local scratch artifacts (ad-hoc curl/debug outputs)
+.commit_time.txt
+.front_health_body.txt
+.front_health_headers.txt
+.gitinfo.txt
+.health_body.txt
+.health_headers.txt
+.lsremote.txt
+.me_body.txt
+.me_headers.txt
