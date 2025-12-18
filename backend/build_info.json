@@ -1,0 +1,9 @@
+{
+  "draftVersion": "v0",
+  "updatedAt": "2025-12-16",
+  "whatChanged": [
+    "Listening: speed controls + jump-back + timeline markers",
+    "Reading: theme/font/line spacing controls",
+    "Feedback: pinned questions + admin prompt coverage"
+  ]
+}

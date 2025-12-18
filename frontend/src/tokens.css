@@ -1,0 +1,94 @@
+:root {
+  /* Night Desk Dossier — design tokens (single source of truth) */
+
+  /* neutrals */
+  --bg0: #070A10;
+  --bg1: #0A1020;
+
+  --surface0: rgba(18, 28, 52, 0.65);
+  --surface1: rgba(28, 41, 72, 0.55);
+  --surface2: rgba(10, 14, 24, 0.55);
+
+  --stroke0: rgba(255, 255, 255, 0.10);
+  --stroke1: rgba(255, 255, 255, 0.16);
+
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  /* text */
+  --text0: rgba(255, 255, 255, 0.92);
+  --text1: rgba(255, 255, 255, 0.74);
+  --text2: rgba(255, 255, 255, 0.55);
+
+  /* accents */
+  --accent: #E01B24; /* blood red */
+  --accent2: #C7A15A; /* brass */
+
+  --accent-soft: rgba(224, 27, 36, 0.18);
+  --accent2-soft: rgba(199, 161, 90, 0.16);
+
+  --ok: #37D67A;
+  --warn: #FFB020;
+  --danger: #FF4D4F;
+
+  /* radii */
+  --r-lg: 20px;
+  --r-md: 14px;
+  --r-sm: 12px;
+  --r-xl: 22px;
+
+  /* spacing scale */
+  --s1: 6px;
+  --s2: 10px;
+  --s3: 14px;
+  --s4: 18px;
+  --s5: 24px;
+  --s6: 32px;
+
+  /* fonts */
+  --font-ui: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-display: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-reading: Georgia, 'Times New Roman', Times, serif;
+
+  /* Back-compat aliases used across existing CSS */
+  --bg-0: var(--bg0);
+  --bg-1: var(--bg1);
+  --surface-0: var(--surface0);
+  --surface-1: var(--surface1);
+  --surface-2: var(--surface2);
+
+  --border-0: var(--stroke0);
+  --border-1: var(--stroke1);
+  --shadow-0: var(--shadow);
+
+  --text-0: var(--text0);
+  --text-1: var(--text1);
+  --text-2: var(--text2);
+
+  --accent-2: var(--accent);
+
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+  --radius-xl: var(--r-xl);
+
+  --bg: var(--bg-0);
+  --panel: var(--surface-0);
+  --panel2: var(--surface-2);
+  --text: var(--text-0);
+  --muted: var(--text-1);
+  --border: var(--border-0);
+
+  font-family: var(--font-ui);
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--text-0);
+  background:
+    radial-gradient(900px 520px at 18% -12%, rgba(224, 27, 36, 0.10), transparent 58%),
+    radial-gradient(1100px 520px at 85% -8%, rgba(255, 255, 255, 0.06), transparent 58%),
+    linear-gradient(180deg, var(--bg-1), var(--bg-0));
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

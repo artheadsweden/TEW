@@ -1,0 +1,1848 @@
+{
+  "chapterId": "chapter00",
+  "generatedAt": "2025-12-15T21:01:09.798672Z",
+  "sourceAudio": "/Users/javv/Documents/Books/Enemy Within/Audio/Chapters/intro.mp3",
+  "sourceText": "/Users/javv/Documents/Books/Enemy Within/edited_version_4/chapters/chapter00.md",
+  "model": "tiny.en",
+  "computeType": "int8",
+  "granularity": "sentence",
+  "derivedFrom": null,
+  "lines": [
+    {
+      "startSeconds": 7.26,
+      "endSeconds": 12.884,
+      "text": "The cardboard box gave up halfway between the bedroom and the living room.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 12.884,
+      "endSeconds": 23.7,
+      "text": "The side split with a tired sigh and everything tumbled out across the rug: tapes, photographs, folded leaflets, envelopes with the glue long since dead.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 23.7,
+      "endSeconds": 32.054,
+      "text": "I sat down on the floor before my back could complain about it and let the mess settle around me.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 32.054,
+      "endSeconds": 44.584,
+      "text": "C90s and C60s skidded to a halt against the coffee table, some in their cracked plastic cases, some bare with only the handwriting on the inlays to tell them apart.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 44.584,
+      "endSeconds": 48.761,
+      "text": "GLASS SAINTS DEMO, one said in my early block capitals.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 48.761,
+      "endSeconds": 50.432,
+      "text": "ORGREAVE – SHELL/NUM WOMEN, another.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 50.432,
+      "endSeconds": 52.52,
+      "text": "POLL TAX DEF PACK – DRAFT.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 52.52,
+      "endSeconds": 63.38,
+      "text": "The ink on some had faded to the colour of an old bruise, but the grooves were still there if you knew how to read them.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 63.38,
+      "endSeconds": 68.643,
+      "text": "Underneath the tapes were photographs, curled at the corners where damp had got in.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 68.643,
+      "endSeconds": 78.792,
+      "text": "One of Shell in The Furnace office with a biro behind her ear and three phones wedged into whatever bit of shoulder and cheek she could spare.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 78.792,
+      "endSeconds": 89.317,
+      "text": "One of my dad, Bill, outside Grimethorpe Colliery in his donkey jacket, hand up to his brow against a winter sun, the slag heap rising grey behind him.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 89.317,
+      "endSeconds": 96.459,
+      "text": "One of a packed hall, fists in the air, a banner half-visible along the top edge of the frame.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 96.459,
+      "endSeconds": 97.587,
+      "text": "NO POLL TAX.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 97.587,
+      "endSeconds": 107.36,
+      "text": "I remembered the heat of that night like it was something I could still step into if I closed my eyes and leaned the right way.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 107.36,
+      "endSeconds": 109.898,
+      "text": "None of it was an accident.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 109.898,
+      "endSeconds": 112.86,
+      "text": "That was the part people never believed.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 112.86,
+      "endSeconds": 114.96,
+      "text": "‘You all right down there?’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 114.96,
+      "endSeconds": 117.305,
+      "text": "The voice came from the doorway.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 117.305,
+      "endSeconds": 118.478,
+      "text": "I looked up.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 118.478,
+      "endSeconds": 129.033,
+      "text": "Keira was leaning on the frame, one hand hooked into the strap of her rucksack, the other cupping a cardboard coffee from the place on the corner.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 129.033,
+      "endSeconds": 134.896,
+      "text": "She was twenty-two, or twenty-three, somewhere in that age where the years don’t stick yet.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 134.896,
+      "endSeconds": 139.978,
+      "text": "Journalism student, neighbour in the flat upstairs, occasional cat-feeder when I went north.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 139.978,
+      "endSeconds": 153.66,
+      "text": "She was finishing a dissertation on something to do with ‘counter-narratives in British protest movements’ – I had read the title once on a printout she left in the hallway and understood about half of it.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 153.66,
+      "endSeconds": 155.601,
+      "text": "She had her own battles, too.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 155.601,
+      "endSeconds": 164.338,
+      "text": "I had seen her come back from gig shifts with that particular kind of exhaustion that reminded me of my mam after a late at the supermarket.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 164.338,
+      "endSeconds": 165.956,
+      "text": "Different uniform, same empty eyes.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 165.956,
+      "endSeconds": 175.34,
+      "text": "She had helped organise a rent strike in our block last year, spreadsheets and WhatsApp groups instead of phone trees and photocopied leaflets, but the principle was familiar enough.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 175.34,
+      "endSeconds": 177.093,
+      "text": "‘Fine,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 177.093,
+      "endSeconds": 178.262,
+      "text": "‘Box surrendered.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 178.262,
+      "endSeconds": 180.6,
+      "text": "I won the war.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 180.6,
+      "endSeconds": 193.18,
+      "text": "She stepped over a small drift of cassette inlays and perched on the arm of the sofa, peering down.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 193.18,
+      "endSeconds": 196.564,
+      "text": "‘Wow,’ she said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 196.564,
+      "endSeconds": 198.82,
+      "text": "‘Ancient artefacts.’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 198.82,
+      "endSeconds": 202.961,
+      "text": "On the television, the sound was turned low but the captions marched along faithfully.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 202.961,
+      "endSeconds": 205.623,
+      "text": "THIRTY-FIVE YEARS SINCE FALL OF THATCHER, the headline said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 205.623,
+      "endSeconds": 213.609,
+      "text": "Grainy footage of a younger Margaret in a blue suit flashed on screen, then a cut to some professor with tidy hair in front of a bookcase.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 213.609,
+      "endSeconds": 221.3,
+      "text": "That was what had set me off this morning – seeing the date on the news, remembering I had a box somewhere with her name on it.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 221.3,
+      "endSeconds": 227.76,
+      "text": "‘Careful,’ I said, nodding at the tapes.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 227.76,
+      "endSeconds": 234.22,
+      "text": "‘Those ancient artefacts were built as weapons.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 234.22,
+      "endSeconds": 239.36,
+      "text": "‘What, mysterious brown plastic rectangles?’ she said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 239.36,
+      "endSeconds": 241.373,
+      "text": "‘Among other things,’ I said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 241.373,
+      "endSeconds": 245.8,
+      "text": "‘They kept some people awake at night, put it that way.’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 245.8,
+      "endSeconds": 252.169,
+      "text": "I picked one tape out of the pile and held it up to the light.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 252.169,
+      "endSeconds": 255.99,
+      "text": "The plastic was cloudy, the screw heads inside dull.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 255.99,
+      "endSeconds": 260.66,
+      "text": "In my handwriting across the inlay: COALFACE – LIVE AT 100 CLUB.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 260.66,
+      "endSeconds": 264.408,
+      "text": "‘They’re saying it was inevitable,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 264.408,
+      "endSeconds": 265.478,
+      "text": "‘Demographic shifts.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 265.478,
+      "endSeconds": 266.014,
+      "text": "Europe.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 266.014,
+      "endSeconds": 267.085,
+      "text": "Cabinet fatigue.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 267.085,
+      "endSeconds": 268.155,
+      "text": "All that.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 268.155,
+      "endSeconds": 274.58,
+      "text": "He just said “the street protest element was significant but not decisive”.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 274.58,
+      "endSeconds": 277.123,
+      "text": "‘That’s what they always say,’ Keira said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 277.123,
+      "endSeconds": 281.844,
+      "text": "‘If it doesn’t happen in a committee room, it doesn’t count.’ She paused.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 281.844,
+      "endSeconds": 284.75,
+      "text": "‘It is the same with the rent stuff.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 284.75,
+      "endSeconds": 291.651,
+      "text": "We got the council to back down on evictions, but the papers made it sound like a policy review.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 291.651,
+      "endSeconds": 294.92,
+      "text": "Nothing about the sixty families who refused to leave.’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 294.92,
+      "endSeconds": 300.446,
+      "text": "She slid off the arm and crouched properly, picking up one of the photographs.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 300.446,
+      "endSeconds": 311.104,
+      "text": "It was the one of The Furnace from the back of the main hall: lights, bodies, the band a small blur of movement at the far end.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 311.104,
+      "endSeconds": 317.42,
+      "text": "You could not see my face, just a silhouette with a guitar and a microphone stand.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 317.42,
+      "endSeconds": 319.6,
+      "text": "‘This was here?’ she asked.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 319.6,
+      "endSeconds": 321.78,
+      "text": "‘In this bit of London?’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 321.78,
+      "endSeconds": 323.787,
+      "text": "‘Round the corner,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 323.787,
+      "endSeconds": 325.794,
+      "text": "‘Building’s a yoga studio now.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 325.794,
+      "endSeconds": 333.42,
+      "text": "You can still see where we painted the sign if the sun hits it right, under the new logo.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 333.42,
+      "endSeconds": 334.222,
+      "text": "THE FURNACE.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 334.222,
+      "endSeconds": 337.835,
+      "text": "We did not think it would last a year.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 337.835,
+      "endSeconds": 339.44,
+      "text": "It nearly lasted ten.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 339.44,
+      "endSeconds": 344.38,
+      "text": "‘And this is you shouting at people?’ She tilted the photo.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 344.38,
+      "endSeconds": 347.386,
+      "text": "‘That’s me shouting at people,’ I agreed.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 347.386,
+      "endSeconds": 349.962,
+      "text": "‘We were very good at that.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 349.962,
+      "endSeconds": 351.68,
+      "text": "The shouting, I mean.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 351.68,
+      "endSeconds": 355.528,
+      "text": "She sat back on her heels and looked about the room.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 355.528,
+      "endSeconds": 373.367,
+      "text": "It was nothing special: two-seater sofa that had seen better days, cheap bookcases holding the things I had not quite got round to throwing away, a small stereo with speakers that were older than she was, a portable record deck I’d bought in a fit of nostalgia a few years back.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 373.367,
+      "endSeconds": 384.56,
+      "text": "The kitchen was separated by a half-wall, a pair of mugs in the sink, a loaf of bread in a paper bag, a jar of marmalade with the lid not quite on.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 384.56,
+      "endSeconds": 387.245,
+      "text": "Only the walls gave anything away.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 387.245,
+      "endSeconds": 392.168,
+      "text": "Band posters, most of them ours or someone’s we’d played with.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 392.168,
+      "endSeconds": 398.88,
+      "text": "A black-and-white photograph of a march, people pouring over a bridge like a human river.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 398.88,
+      "endSeconds": 402.379,
+      "text": "On the floor by the sofa, another box.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 402.379,
+      "endSeconds": 406.316,
+      "text": "This one held videotapes, labelled in Shell’s neat hand.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 406.316,
+      "endSeconds": 409.378,
+      "text": "POLL TAX – COACH GRID MEETING, read one.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 409.378,
+      "endSeconds": 410.253,
+      "text": "STEWARD TRAINING.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 410.253,
+      "endSeconds": 411.128,
+      "text": "COURT DAY.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 411.128,
+      "endSeconds": 412.44,
+      "text": "FINCHLEY FACES – MASTER.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 412.44,
+      "endSeconds": 414.498,
+      "text": "Keira nudged it with her foot.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 414.498,
+      "endSeconds": 416.9,
+      "text": "‘How many of these have you got?’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 416.9,
+      "endSeconds": 418.419,
+      "text": "‘Of the VHS?’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 418.419,
+      "endSeconds": 418.723,
+      "text": "‘Dozens.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 418.723,
+      "endSeconds": 420.849,
+      "text": "Somewhere in the boxes in the bedroom.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 420.849,
+      "endSeconds": 422.976,
+      "text": "Charlotte kept the negatives of the stills.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 422.976,
+      "endSeconds": 425.71,
+      "text": "I suppose the university or someone has them now.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 425.71,
+      "endSeconds": 426.621,
+      "text": "Or a skip.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 426.621,
+      "endSeconds": 428.14,
+      "text": "Hard to tell with universities.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 428.14,
+      "endSeconds": 429.34,
+      "text": "There was a brief silence.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 429.34,
+      "endSeconds": 435.34,
+      "text": "On the television the professor was replaced by a clip of Trafalgar Square in chaos: smoke, police lines, young faces twisted in anger or fear.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 435.34,
+      "endSeconds": 438.22,
+      "text": "I could not hear the commentary, but I did not need it.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 438.22,
+      "endSeconds": 440.14,
+      "text": "I had heard every version they’d ever written.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 440.14,
+      "endSeconds": 445.162,
+      "text": "‘You know,’ Keira said, ‘we’re doing a thing on this for the student station.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 445.162,
+      "endSeconds": 445.521,
+      "text": "Thatcher.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 445.521,
+      "endSeconds": 446.597,
+      "text": "The miners’ strike.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 446.597,
+      "endSeconds": 447.314,
+      "text": "Poll Tax.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 447.314,
+      "endSeconds": 448.032,
+      "text": "All that.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 448.032,
+      "endSeconds": 450.543,
+      "text": "“Lives behind the headlines”, they’re calling it.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 450.543,
+      "endSeconds": 451.26,
+      "text": "Very BBC.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 451.26,
+      "endSeconds": 451.78,
+      "text": "‘Catchy,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 451.78,
+      "endSeconds": 460.701,
+      "text": "‘We’ve got politicians and academics and a former chief constable.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 460.701,
+      "endSeconds": 466.946,
+      "text": "Couple of talking heads from think tanks.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 466.946,
+      "endSeconds": 481.219,
+      "text": "My tutor keeps going on about “structural factors”.’ She picked up another tape, turned it over.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 481.219,
+      "endSeconds": 490.14,
+      "text": "‘I said we should get someone who was actually there.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 490.14,
+      "endSeconds": 493.04,
+      "text": "‘Plenty of us were there,’ I said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 493.04,
+      "endSeconds": 496.607,
+      "text": "‘Yeah, but you live downstairs,’ she said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 496.607,
+      "endSeconds": 502.722,
+      "text": "‘And you have…’ She gestured to the sprawl of cardboard and plastic.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 502.722,
+      "endSeconds": 503.232,
+      "text": "‘Evidence.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 503.232,
+      "endSeconds": 505.78,
+      "text": "Everyone else just has opinions.’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 505.78,
+      "endSeconds": 506.446,
+      "text": "‘Evidence,’ I repeated.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 506.446,
+      "endSeconds": 508.001,
+      "text": "The word sat heavy on my tongue.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 508.001,
+      "endSeconds": 512.442,
+      "text": "We had not called it that when we were stuffing it into boxes, back when the ink was still wet.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 512.442,
+      "endSeconds": 512.886,
+      "text": "Proof, maybe.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 512.886,
+      "endSeconds": 513.108,
+      "text": "Back-up.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 513.108,
+      "endSeconds": 514.44,
+      "text": "Insurance for the day they lied.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 514.44,
+      "endSeconds": 527.245,
+      "text": "I pushed a pile of photographs aside to clear space on the carpet and sat back, legs stretched out.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 527.245,
+      "endSeconds": 536.68,
+      "text": "My knees complained in a way that would have made my twenty-year-old self laugh.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 536.68,
+      "endSeconds": 541.005,
+      "text": "‘You don’t keep forty years of this lot by accident,’ I said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 541.005,
+      "endSeconds": 544.248,
+      "text": "‘We did not just forget to throw it out.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 544.248,
+      "endSeconds": 548.933,
+      "text": "Every tape, every leaflet, every summons – someone made a choice to keep it.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 548.933,
+      "endSeconds": 555.06,
+      "text": "We thought: one day they’ll say we imagined it, so we’d better make it hard for them.’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 555.06,
+      "endSeconds": 559.615,
+      "text": "She finished her coffee and put the empty cup on the table.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 559.615,
+      "endSeconds": 562.272,
+      "text": "For a moment she watched the television.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 562.272,
+      "endSeconds": 572.52,
+      "text": "The footage had moved on to a shot of Thatcher leaving Number Ten for the last time, cheeks wet but spine rigid, Denis’s hand at her elbow.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 572.52,
+      "endSeconds": 580.486,
+      "text": "‘Do you think you brought her down?’ Keira asked, as if she were asking whether I wanted sugar in my tea.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 580.486,
+      "endSeconds": 581.244,
+      "text": "‘You lot.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 581.244,
+      "endSeconds": 583.52,
+      "text": "The “enemy within” and all that.’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 583.52,
+      "endSeconds": 593.413,
+      "text": "I had mentioned the phrase to her once before, weeks back, when she had asked why I kept a box labelled ENEMY WITHIN under my bed.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 593.413,
+      "endSeconds": 597.218,
+      "text": "She had laughed at the time, thought I was joking.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 597.218,
+      "endSeconds": 599.12,
+      "text": "Now she was not laughing.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 599.12,
+      "endSeconds": 602.28,
+      "text": "The phrase hung in the room like smoke.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 602.28,
+      "endSeconds": 608.007,
+      "text": "In my head, I could hear other phrases layered underneath: riot.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 608.007,
+      "endSeconds": 608.528,
+      "text": "Thugs.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 608.528,
+      "endSeconds": 609.048,
+      "text": "Scum.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 609.048,
+      "endSeconds": 610.089,
+      "text": "Responsible citizens.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 610.089,
+      "endSeconds": 618.94,
+      "text": "We had been all of those, depending on who you asked and what they wanted to prove.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 618.94,
+      "endSeconds": 622.231,
+      "text": "I leaned over and turned the television off.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 622.231,
+      "endSeconds": 626.756,
+      "text": "The room lost its flicker and went oddly lopsided without it.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 626.756,
+      "endSeconds": 634.16,
+      "text": "Outside, a bus pulled away from the stop with a long exhale, tyres rolling through last night’s rain.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 634.16,
+      "endSeconds": 636.57,
+      "text": "‘I can’t prove anything,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 636.57,
+      "endSeconds": 638.176,
+      "text": "‘That’s the short answer.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 638.176,
+      "endSeconds": 647.012,
+      "text": "There is not a graph you can point to with “Danny Ashcroft” on one axis and “Prime Ministerial stability” on the other.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 647.012,
+      "endSeconds": 649.02,
+      "text": "No neat line going down.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 649.02,
+      "endSeconds": 652.284,
+      "text": "She smiled at that, then sobered.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 652.284,
+      "endSeconds": 654.46,
+      "text": "‘And the long answer?’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 654.46,
+      "endSeconds": 659.72,
+      "text": "‘The long answer,’ I said, ‘is in those boxes.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 659.72,
+      "endSeconds": 666.826,
+      "text": "I put the tape I’d been holding on the coffee table and reached for another, one of Shell’s.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 666.826,
+      "endSeconds": 670.379,
+      "text": "POLL TAX DEF PACK – MASTER in her neat capitals.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 670.379,
+      "endSeconds": 676.3,
+      "text": "Next to it I set the Finchley tape, and one of the early Coalface demos.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 676.3,
+      "endSeconds": 679.39,
+      "text": "‘They’ll tell you the big things,’ I said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 679.39,
+      "endSeconds": 680.934,
+      "text": "‘The letters to Europe.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 680.934,
+      "endSeconds": 684.024,
+      "text": "The argument in the back of a car.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 684.024,
+      "endSeconds": 690.59,
+      "text": "The day a few very calm men walked down a corridor to tell her she was finished.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 690.59,
+      "endSeconds": 695.997,
+      "text": "They like that bit, because it happens indoors, in rooms they’re allowed to film.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 695.997,
+      "endSeconds": 697.541,
+      "text": "It looks like control.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 697.541,
+      "endSeconds": 698.7,
+      "text": "It looks tidy.’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 698.7,
+      "endSeconds": 701.64,
+      "text": "I tapped each spine in turn.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 701.64,
+      "endSeconds": 703.028,
+      "text": "‘They won’t tell you about this,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 703.028,
+      "endSeconds": 705.109,
+      "text": "‘They might mention “grass-roots protest”, like it’s a sort of weather system.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 705.109,
+      "endSeconds": 705.456,
+      "text": "Background noise.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 705.456,
+      "endSeconds": 709.271,
+      "text": "But they won’t sit you down and say: there were five things, five fingerprints, that our lot left on that woman’s downfall.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 709.271,
+      "endSeconds": 709.445,
+      "text": "Noise.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 709.445,
+      "endSeconds": 709.618,
+      "text": "Base.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 709.618,
+      "endSeconds": 709.792,
+      "text": "Movement.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 709.792,
+      "endSeconds": 709.965,
+      "text": "Access.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 709.965,
+      "endSeconds": 710.138,
+      "text": "Disruption.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 710.138,
+      "endSeconds": 712.74,
+      "text": "If you trace them, one after the other, you can feel where the cracks started.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 712.74,
+      "endSeconds": 736.98,
+      "text": "Keira shifted on the sofa, shoes off now, feet tucked up under her.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 736.98,
+      "endSeconds": 739.88,
+      "text": "‘Five fingerprints?’ she said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 739.88,
+      "endSeconds": 743.22,
+      "text": "‘We first wrote those five words down at Mam’s kitchen table in ’85,’ I said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 743.22,
+      "endSeconds": 744.778,
+      "text": "‘Trying to name what we were building.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 744.778,
+      "endSeconds": 747.896,
+      "text": "First one was noise – songs on C90s that went further than we ever could.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 747.896,
+      "endSeconds": 751.235,
+      "text": "Second was base: a place built out of nothing, where people could meet and plan.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 751.235,
+      "endSeconds": 755.021,
+      "text": "Third was movement – coaches, stewarding, all the dull bits that get bodies safely from A to B.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 755.021,
+      "endSeconds": 757.915,
+      "text": "Fourth was access – getting inside the worlds that did not want us there.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 757.915,
+      "endSeconds": 765.04,
+      "text": "And the fifth was disruption: films and court packs and all the paper and pressure that stopped them rewriting what they did and carried the fight into places they thought were safe.’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 765.04,
+      "endSeconds": 787.74,
+      "text": "I nudged the Finchley tape towards her.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 787.74,
+      "endSeconds": 792.15,
+      "text": "‘That one sits mostly in the fourth,’ I said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 792.15,
+      "endSeconds": 792.64,
+      "text": "‘Influence.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 792.64,
+      "endSeconds": 793.62,
+      "text": "Finchley Faces.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 793.62,
+      "endSeconds": 799.5,
+      "text": "But they all bleed into each other if you look closely enough.’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 799.5,
+      "endSeconds": 805.06,
+      "text": "She watched my hands as if the tapes might shift under their own weight.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 805.06,
+      "endSeconds": 807.28,
+      "text": "‘Do you ever…’ She hesitated.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 807.28,
+      "endSeconds": 811.72,
+      "text": "‘Do you ever worry you’re giving yourself too much credit?’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 811.72,
+      "endSeconds": 813.242,
+      "text": "‘Every day,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 813.242,
+      "endSeconds": 817.427,
+      "text": "‘That’s why it’s taken me this long to open these boxes.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 817.427,
+      "endSeconds": 827.32,
+      "text": "You don’t want to be the ageing bore in the corner telling anyone who’ll listen that he, personally, changed history by shouting into a stolen microphone.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 827.32,
+      "endSeconds": 832.06,
+      "text": "‘You did shout into microphones, though,’ she said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 832.06,
+      "endSeconds": 834.712,
+      "text": "‘Oh, I shouted plenty,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 834.712,
+      "endSeconds": 836.038,
+      "text": "‘We all did.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 836.038,
+      "endSeconds": 837.805,
+      "text": "But shouting’s just weather.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 837.805,
+      "endSeconds": 842.225,
+      "text": "What interested me, later on, was the infrastructure underneath it.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 842.225,
+      "endSeconds": 843.551,
+      "text": "The phone trees.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 843.551,
+      "endSeconds": 844.877,
+      "text": "The coach grids.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 844.877,
+      "endSeconds": 848.855,
+      "text": "The boring bits you never see in the documentaries.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 848.855,
+      "endSeconds": 854.6,
+      "text": "That’s where we stopped just being loud and started getting in the way.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 854.6,
+      "endSeconds": 861.38,
+      "text": "She picked up the Coal Not Dole poster from where it had slipped down behind the sofa and propped it back on the windowsill.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 861.38,
+      "endSeconds": 868.698,
+      "text": "‘I can’t prove I helped take a Prime Minister down,’ I said, hearing the words as much as speaking them.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 868.698,
+      "endSeconds": 874.552,
+      "text": "‘But I know where some of the cracks started, because I was there with a chisel.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 874.552,
+      "endSeconds": 878.942,
+      "text": "And I can show you the grooves we left if you like.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 878.942,
+      "endSeconds": 880.04,
+      "text": "They’re all here.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 880.04,
+      "endSeconds": 885.78,
+      "text": "She considered that, then glanced towards the silent television.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 885.78,
+      "endSeconds": 889.608,
+      "text": "‘My lot will say it’s anecdotal,’ she said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 889.608,
+      "endSeconds": 892.0,
+      "text": "‘My tutor loves that word.’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 892.0,
+      "endSeconds": 894.081,
+      "text": "‘Course he does,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 894.081,
+      "endSeconds": 899.075,
+      "text": "‘It lets him file people away and get back to his graphs.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 899.075,
+      "endSeconds": 901.572,
+      "text": "Thing is, these aren’t just anecdotes.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 901.572,
+      "endSeconds": 902.405,
+      "text": "They’re exhibits.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 902.405,
+      "endSeconds": 904.486,
+      "text": "We kept them for you.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 904.486,
+      "endSeconds": 909.48,
+      "text": "For whoever turned up one day wanting a different version of events.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 909.48,
+      "endSeconds": 912.915,
+      "text": "Her head snapped back to me.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 912.915,
+      "endSeconds": 914.06,
+      "text": "‘For me?’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 914.06,
+      "endSeconds": 914.83,
+      "text": "‘Not you personally,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 914.83,
+      "endSeconds": 915.754,
+      "text": "‘We did not know your name.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 915.754,
+      "endSeconds": 918.68,
+      "text": "But we knew there’d be some kid, forty years on, trying to write their way through the official story.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 918.68,
+      "endSeconds": 919.604,
+      "text": "We talked about it, you know.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 919.604,
+      "endSeconds": 919.912,
+      "text": "Back then.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 919.912,
+      "endSeconds": 920.528,
+      "text": "After the worst bits.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 920.528,
+      "endSeconds": 922.068,
+      "text": "“They’ll say it did not happen like this,” Shell said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 922.068,
+      "endSeconds": 923.3,
+      "text": "“So we best make sure we’ve got proof.”’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 923.3,
+      "endSeconds": 943.12,
+      "text": "Keira’s fingers tightened on the edge of the coffee table.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 943.12,
+      "endSeconds": 947.305,
+      "text": "‘You talked about that at the time?’ she asked.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 947.305,
+      "endSeconds": 948.7,
+      "text": "‘Not just afterwards?’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 948.7,
+      "endSeconds": 950.018,
+      "text": "‘At the time,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 950.018,
+      "endSeconds": 950.281,
+      "text": "‘Orgreave.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 950.281,
+      "endSeconds": 950.545,
+      "text": "Chernobyl.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 950.545,
+      "endSeconds": 950.808,
+      "text": "Hillsborough.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 950.808,
+      "endSeconds": 951.072,
+      "text": "Trafalgar.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 951.072,
+      "endSeconds": 956.869,
+      "text": "Every time the telly lied about what we’d just watched with our own eyes, somebody in the room said: “Keep the tapes.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 956.869,
+      "endSeconds": 957.66,
+      "text": "Keep the summons.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 957.66,
+      "endSeconds": 960.295,
+      "text": "One day some poor sod will need them.”’ I shrugged.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 960.295,
+      "endSeconds": 962.14,
+      "text": "‘Looks like that poor sod turned up.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 962.14,
+      "endSeconds": 970.74,
+      "text": "She laughed, a quick, startled sound, and pushed her hair back from her face.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 970.74,
+      "endSeconds": 972.317,
+      "text": "‘All right,’ she said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 972.317,
+      "endSeconds": 974.683,
+      "text": "‘Say I am that poor sod.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 974.683,
+      "endSeconds": 976.26,
+      "text": "What do I do?’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 976.26,
+      "endSeconds": 978.876,
+      "text": "‘You listen,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 978.876,
+      "endSeconds": 980.184,
+      "text": "‘You watch.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 980.184,
+      "endSeconds": 986.723,
+      "text": "You write it down in a way they can’t ignore.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 986.723,
+      "endSeconds": 988.685,
+      "text": "That’s your end.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 988.685,
+      "endSeconds": 997.84,
+      "text": "Mine is to make sure you don’t have to take my word for it.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 997.84,
+      "endSeconds": 1002.84,
+      "text": "I got to my feet with more care than I once would have needed.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1002.84,
+      "endSeconds": 1005.798,
+      "text": "‘First rule of all this,’ I added.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1005.798,
+      "endSeconds": 1009.6,
+      "text": "‘You can’t talk about Thatcher on an empty stomach.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1009.6,
+      "endSeconds": 1013.403,
+      "text": "That’s one other thing the structural analysts never mention.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1013.403,
+      "endSeconds": 1014.67,
+      "text": "I’ll make tea.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1014.67,
+      "endSeconds": 1016.36,
+      "text": "You start a list.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1016.36,
+      "endSeconds": 1018.98,
+      "text": "‘A list?’ she said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1018.98,
+      "endSeconds": 1021.533,
+      "text": "‘Tapes we need to get digitised,’ I said, nodding at the sprawl.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1021.533,
+      "endSeconds": 1023.447,
+      "text": "‘Photographs that have not seen daylight since nineteen ninety.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1023.447,
+      "endSeconds": 1025.149,
+      "text": "Names you’ll have to change for legal reasons.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1025.149,
+      "endSeconds": 1026.851,
+      "text": "If we’re doing this, we’re doing it properly.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1026.851,
+      "endSeconds": 1030.68,
+      "text": "No one gets to say it all vanished because we could not be bothered to label a box.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1030.68,
+      "endSeconds": 1032.787,
+      "text": "In the kitchen, I filled the kettle and spooned tea into the pot.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1032.787,
+      "endSeconds": 1037.813,
+      "text": "Through the half-wall I could see her arranging tapes and photographs on the table in rough chronological piles, lips moving a little as she tried to sound out my old handwriting.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1037.813,
+      "endSeconds": 1039.92,
+      "text": "She had already drawn two columns on a fresh page: THEN and NOW.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1039.92,
+      "endSeconds": 1045.0,
+      "text": "I poured hot water over the leaves and let the steam curl up into my face.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1045.0,
+      "endSeconds": 1051.256,
+      "text": "Brown plastic, curled photographs, a tally disc, and a kettle that took an age to boil.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1051.256,
+      "endSeconds": 1052.82,
+      "text": "That was the arsenal.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1052.82,
+      "endSeconds": 1079.44,
+      "text": "‘All right?’ Keira called.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1079.44,
+      "endSeconds": 1087.6,
+      "text": "I picked up the teapot and two mugs and carried them back through, careful not to tread on anything important.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1087.6,
+      "endSeconds": 1089.294,
+      "text": "‘All right,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1089.294,
+      "endSeconds": 1091.835,
+      "text": "‘You wanted lives behind the headlines.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1091.835,
+      "endSeconds": 1094.8,
+      "text": "Let’s see if you can keep up.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1094.8,
+      "endSeconds": 1097.584,
+      "text": "She grinned and uncapped her pen.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1097.584,
+      "endSeconds": 1103.152,
+      "text": "On the table, she had started a second list under the first.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1103.152,
+      "endSeconds": 1106.4,
+      "text": "Five numbers, evenly spaced down the page.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1106.4,
+      "endSeconds": 1112.169,
+      "text": "‘Noise, base, movement, access, disruption,’ she read out, brow furrowed.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1112.169,
+      "endSeconds": 1113.9,
+      "text": "‘Is that right?’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1113.9,
+      "endSeconds": 1115.321,
+      "text": "‘Close enough,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1115.321,
+      "endSeconds": 1117.452,
+      "text": "‘We’ll argue about the labels later.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1117.452,
+      "endSeconds": 1119.227,
+      "text": "For now, they’re just fingerprints.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1119.227,
+      "endSeconds": 1125.62,
+      "text": "Places where we pressed ourselves into the story so they could not scrape us off without leaving marks.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1125.62,
+      "endSeconds": 1135.46,
+      "text": "The tape on the table, the one about the Square, caught the light as I sat down, the title flashing up for a second before it dulled again.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1135.46,
+      "endSeconds": 1141.14,
+      "text": "I wrapped my hands round the mug and let the heat sink into stiff fingers.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1141.14,
+      "endSeconds": 1141.701,
+      "text": "‘So,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1141.701,
+      "endSeconds": 1142.261,
+      "text": "‘There’s this lad.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1142.261,
+      "endSeconds": 1142.448,
+      "text": "Seventeen.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1142.448,
+      "endSeconds": 1147.494,
+      "text": "Coal dust under his nails, guitar he bought off his cousin, a dad who thinks music is what you put on in the pub after a shift.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1147.494,
+      "endSeconds": 1151.419,
+      "text": "One morning – not that morning, but later, after things got worse – he hears a phrase on the radio he’s never forgotten.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1151.419,
+      "endSeconds": 1151.98,
+      "text": "“The enemy within.”’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1151.98,
+      "endSeconds": 1152.52,
+      "text": "Keira’s pen moved.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1152.52,
+      "endSeconds": 1159.633,
+      "text": "‘I should warn you,’ I added.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1159.633,
+      "endSeconds": 1165.56,
+      "text": "‘He grows up painfully slowly.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1165.56,
+      "endSeconds": 1171.487,
+      "text": "He shouts before he listens.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1171.487,
+      "endSeconds": 1178.6,
+      "text": "He thinks tapes can topple governments.’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1178.6,
+      "endSeconds": 1180.74,
+      "text": "‘Does he?’ she said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1180.74,
+      "endSeconds": 1184.095,
+      "text": "‘He finds out tapes can do something,’ I said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1184.095,
+      "endSeconds": 1186.704,
+      "text": "‘You can decide for yourself how much.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1186.704,
+      "endSeconds": 1188.195,
+      "text": "That’s your job now.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1188.195,
+      "endSeconds": 1193.04,
+      "text": "Mine was to make sure you’d have something to measure your theories against.’",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1193.04,
+      "endSeconds": 1195.927,
+      "text": "Outside, a siren rose and fell.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1195.927,
+      "endSeconds": 1201.22,
+      "text": "Somewhere, a bus stop display ticked over to a new number.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1201.22,
+      "endSeconds": 1203.16,
+      "text": "On my table, the boxes waited.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1203.16,
+      "endSeconds": 1204.767,
+      "text": "‘Right,’ I said.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1204.767,
+      "endSeconds": 1205.303,
+      "text": "‘Grimethorpe.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1205.303,
+      "endSeconds": 1205.838,
+      "text": "1984.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1205.838,
+      "endSeconds": 1209.052,
+      "text": "Before any of this lot existed.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1209.052,
+      "endSeconds": 1214.409,
+      "text": "Before we knew how small and how big we were.",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1214.409,
+      "endSeconds": 1215.48,
+      "text": "You ready?’",
+      "aligned": false
+    },
+    {
+      "startSeconds": 1215.48,
+      "endSeconds": 1218.92,
+      "text": "‘Always,’ she said.",
+      "aligned": true
+    },
+    {
+      "startSeconds": 1218.92,
+      "endSeconds": 1222.39,
+      "text": "So I started.",
+      "aligned": true
+    }
+  ]
+}

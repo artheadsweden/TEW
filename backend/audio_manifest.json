@@ -1,0 +1,29 @@
+{
+  "bookTitle": "The Enemy Within",
+  "chapters": [
+    {"id": "chapter00", "title": "Prologue", "audioUrl": "https://www.dropbox.com/scl/fi/33jj18hspb0y6q7osbmcs/intro.mp3?rlkey=rk6prgdi82ax6m1r56symba4a&raw=1"},
+    {"id": "chapter01", "title": "Chapter 1", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter01.mp3?raw=1"},
+    {"id": "chapter02", "title": "Chapter 2", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter02.mp3?raw=1"},
+    {"id": "chapter03", "title": "Chapter 3", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter03.mp3?raw=1"},
+    {"id": "chapter04", "title": "Chapter 4", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter04.mp3?raw=1"},
+    {"id": "chapter05", "title": "Chapter 5", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter05.mp3?raw=1"},
+    {"id": "chapter06", "title": "Chapter 6", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter06.mp3?raw=1"},
+    {"id": "chapter07", "title": "Chapter 7", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter07.mp3?raw=1"},
+    {"id": "chapter08", "title": "Chapter 8", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter08.mp3?raw=1"},
+    {"id": "chapter09", "title": "Chapter 9", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter09.mp3?raw=1"},
+    {"id": "chapter10", "title": "Chapter 10", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter10.mp3?raw=1"},
+    {"id": "chapter11", "title": "Chapter 11", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter11.mp3?raw=1"},
+    {"id": "chapter12", "title": "Chapter 12", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter12.mp3?raw=1"},
+    {"id": "chapter13", "title": "Chapter 13", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter13.mp3?raw=1"},
+    {"id": "chapter14", "title": "Chapter 14", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter14.mp3?raw=1"},
+    {"id": "chapter15", "title": "Chapter 15", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter15.mp3?raw=1"},
+    {"id": "chapter16", "title": "Chapter 16", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter16.mp3?raw=1"},
+    {"id": "chapter17", "title": "Chapter 17", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter17.mp3?raw=1"},
+    {"id": "chapter18", "title": "Chapter 18", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter18.mp3?raw=1"},
+    {"id": "chapter19", "title": "Chapter 19", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter19.mp3?raw=1"},
+    {"id": "chapter20", "title": "Chapter 20", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter20.mp3?raw=1"},
+    {"id": "chapter21", "title": "Chapter 21", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter21.mp3?raw=1"},
+    {"id": "chapter22", "title": "Chapter 22", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter22.mp3?raw=1"},
+    {"id": "chapter99", "title": "Epilogue", "audioUrl": "https://www.dropbox.com/s/REPLACE_ME/chapter99.mp3?raw=1"}
+  ]
+}
