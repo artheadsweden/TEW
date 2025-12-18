@@ -303,7 +303,8 @@ def create_app() -> Flask:
 
     # Helpful for Render debugging; does not leak the password.
     try:
-        app.logger.info("Using DATABASE_URL=%s", _redact_database_url(db_uri))
+        # Use WARNING so it reliably appears in production logs.
+        app.logger.warning("Using DATABASE_URL=%s", _redact_database_url(db_uri))
     except Exception:
         pass
 
