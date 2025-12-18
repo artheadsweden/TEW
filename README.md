@@ -128,6 +128,12 @@ On Render, treat the database URL as a **secret** environment variable.
   - Value: your Supabase connection string
 3) Click **Save Changes** (Render will redeploy).
 
+### Backend service settings (recommended)
+
+- Root Directory: `backend`
+- Build Command: `pip install -r requirements.txt`
+- Start Command: `gunicorn wsgi:app --bind 0.0.0.0:$PORT`
+
 ### Handling the password
 
 Put the password only inside the `DATABASE_URL` value you store in Render (never commit it).
